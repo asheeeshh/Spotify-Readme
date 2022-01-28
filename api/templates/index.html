@@ -1,5 +1,5 @@
 <svg width="400" height="150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <foreignObject width="400" height="160">
+    <foreignObject width="400" height="150">
         <div xmlns="http://www.w3.org/1999/xhtml" class="container">
             <style>
                 /* CSS Reset */
@@ -33,7 +33,7 @@
                     {% endif %}
                 }
                 aside {
-                    width: 485px;
+                    width: 390px;
                     display: flex;
                     position: relative;
                     {% if scan_code %}
@@ -48,6 +48,7 @@
                     animation-duration: 10s;
                     {% else %}
                     border-radius: 5px;
+                    padding-right: 30px;
                     /* {% endif %} 
                     {% if theme == 'dark' %} 
                         box-shadow: 0 0 10px 5px #1b2027; 
@@ -56,12 +57,13 @@
                     {% endif %} */
                 }
                 section {
-                    padding-left: 50px;
+                    padding-left: 30px;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: flex-start;
+                    border-left: 1px solid #c7c9c8;
                 }
                 .info {
                     margin-top: 0px;
