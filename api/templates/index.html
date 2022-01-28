@@ -47,13 +47,13 @@
                     animation: spin 0ms -800ms linear infinite;
                     animation-duration: 10s;
                     {% else %}
-                    border-radius: 10px;
-                    {% endif %}
-                    {% if theme == 'dark' %}
-                        box-shadow: 0 0 10px 5px #1b2027;
-                    {% else %}
+                    border-radius: 5px;
+                    /* {% endif %} 
+                    {% if theme == 'dark' %} 
+                        box-shadow: 0 0 10px 5px #1b2027; 
+                    {% else %} 
                         box-shadow: 0 0 10px 5px #f1f3f5;
-                    {% endif %}
+                    {% endif %} */
                 }
                 section {
                     padding-left: 20px;
@@ -110,7 +110,7 @@
                     width: 24px;
                     height: 24px;
                 }
-                .bar-container {
+                /* .bar-container {
                     display: flex;
                     animation: rainbow 0ms -800ms linear infinite;
                 }
@@ -127,7 +127,7 @@
                 }
                 .bar:not(:first-child) {
                     margin-left: 6px;
-                }
+                } */
                 @keyframes spin {
                     100% { transform: rotate(360deg) }
                 }
@@ -160,9 +160,9 @@
                             </div>
                             <p>{{artist}}</p>
                         </div>
-                        <div class="bar-container">
+                        <!-- <div class="bar-container">
                             {{bars|safe}}
-                        </div>
+                        </div> -->
                     </section>
                 </aside>
             </main>
