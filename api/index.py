@@ -117,8 +117,8 @@ app = Flask(__name__)
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path):
-    if path == "np":
-        print('np')
+    if path == "nowpl":
+        print('nowplaying')
         return make_response(jsonify({"cont":"np"}), 200)
     else:
         resp = Response(
