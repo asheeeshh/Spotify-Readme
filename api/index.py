@@ -129,11 +129,9 @@ def catch_all(path):
     resp.headers['Cache-Control'] = 's-maxage=1'
     return resp
 
-
+@app.route('/np')
 def np():
     return make_response(jsonify("cont"="np"), 200)
-
-app.add_url_rule('/np/', 'np', np)
 
 
 if __name__ == '__main__':
