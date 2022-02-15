@@ -127,6 +127,7 @@ def catch_all(path):
         mimetype='image/svg+xml'
     )
     resp.headers['Cache-Control'] = 's-maxage=1'
+    print(path)
     return resp
 
 @app.route('/np')
