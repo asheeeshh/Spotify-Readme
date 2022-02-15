@@ -117,22 +117,22 @@ app = Flask(__name__)
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path):
-    resp = Response(
-        make_svg(
-            request.args.get('spin'),
-            request.args.get('scan'),
-            request.args.get('theme'),
-            request.args.get('rainbow'),
-        ),
-        mimetype='image/svg+xml'
-    )
-    resp.headers['Cache-Control'] = 's-maxage=1'
-    print(path)
-    return resp
-
-@app.route('/np')
-def np():
-    return make_response(jsonify({"cont":"np"}), 200)
+    if path == "np":
+        print('np')
+        return make_response(jsonify({"cont":"np"}), 200)
+    else:
+        resp = Response(
+            make_svg(
+                request.args.get('spin'),
+                request.args.get('scan'),
+                request.args.get('theme'),
+                request.args.get('rainbow'),
+            ),
+            mimetype='image/svg+xml'
+        )
+        resp.headers['Cache-Control'] = 's-maxage=1'
+        print(path)
+        return resp
 
 
 if __name__ == '__main__':
