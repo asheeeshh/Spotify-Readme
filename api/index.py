@@ -130,10 +130,10 @@ def catch_all(path):
     return resp
 
 
-@app.route('/', defaults={'path': ''})
+@app.route('/np/', defaults={'path': ''})
 @app.route('/<path:path>')
-def catch_all(path):
-    return 'You want path: %s' % path
+def np(path):
+    return 'np' % path
 
 
 if __name__ == '__main__':
