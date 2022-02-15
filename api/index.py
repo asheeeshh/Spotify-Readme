@@ -130,9 +130,10 @@ def catch_all(path):
     return resp
 
 
-@app.route('/np/')
 def np():
     return 'np'
+
+app.add_url_rule('/np/', 'np', np)
 
 
 if __name__ == '__main__':
