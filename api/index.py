@@ -116,7 +116,7 @@ app = Flask(__name__)
 @app.route('/nowpl')
 def nowpl():
     print('nowplaying')
-    return make_response(jsonify({"cont":"np"}), 200)
+    return render_template('np.html')
 
 
 @app.route("/", defaults={"path": ""})
