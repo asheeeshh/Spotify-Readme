@@ -132,7 +132,7 @@ def catch_all(path):
 
 @app.route('/np')
 def np():
-    return make_response(jsonify("cont"="np"), 200)
+    return make_response(jsonify({"cont":"np"}), 200)
 
 
 if __name__ == '__main__':
