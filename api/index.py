@@ -113,26 +113,27 @@ def make_svg(spin, scan, theme, rainbow):
 
 app = Flask(__name__)
 
+@app.route('/nowpl')
+def nowpl():
+    print('nowplaying')
+    return make_response(jsonify({"cont":"np"}), 200)
+
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def catch_all(path):
-    if path == "nowpl":
-        print('nowplaying')
-        return make_response(jsonify({"cont":"np"}), 200)
-    else:
-        resp = Response(
-            make_svg(
-                request.args.get('spin'),
-                request.args.get('scan'),
-                request.args.get('theme'),
-                request.args.get('rainbow'),
-            ),
-            mimetype='image/svg+xml'
-        )
-        resp.headers['Cache-Control'] = 's-maxage=1'
-        print(path)
-        return resp
+    resp = Response(
+        make_svg(
+            request.args.get('spin'),
+            request.args.get('scan'),
+            request.args.get('theme'),
+            request.args.get('rainbow'),
+        ),
+        mimetype='image/svg+xml'
+    )
+    resp.headers['Cache-Control'] = 's-maxage=1'
+    print(path)
+    return resp
 
 
 if __name__ == '__main__':
