@@ -129,9 +129,11 @@ def catch_all(path):
     resp.headers['Cache-Control'] = 's-maxage=1'
     return resp
 
-@app.route("/np")
-def np():
-    return "now playing"
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    return 'You want path: %s' % path
 
 
 if __name__ == '__main__':
